@@ -40,7 +40,7 @@
 
 /* General styles */
 body {
-	background: #212121;
+	background: #fff;
 	color: #fff;
 	font-size: 1em;
 	overflow: hidden;
@@ -404,7 +404,7 @@ button:focus {
 	display: block;
 	position: relative;
 	overflow: hidden;
-	color: #fff;
+	color: #ef5350;
 	width: 100%;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -446,7 +446,7 @@ button:focus {
 }
 
 .stack-title a:hover {
-	color: #fff;
+	color: #FF5956;
 }
 
 .move-items .is-selected .stack-title a::after {
