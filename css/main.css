@@ -195,6 +195,42 @@ button:focus {
 	backface-visibility: hidden;
 }
 
+.hero.ali > div {
+	background: #212121 url(../img/oc-portraits/bg/ali.jpg) no-repeat 50% 0;
+}
+
+.hero.brian > div {
+	background: #212121 url(../img/oc-portraits/bg/brian.jpg) no-repeat 50% 0;
+}
+
+.hero.drew > div {
+	background: #212121 url(../img/oc-portraits/bg/drew.jpg) no-repeat 50% 0;
+}
+
+.hero.joe > div {
+	background: #212121 url(../img/oc-portraits/bg/joe.jpg) no-repeat 50% 0;
+}
+
+.hero.kevin > div {
+	background: #212121 url(../img/oc-portraits/bg/kevin.jpg) no-repeat 50% 0;
+}
+
+.hero.rich > div {
+	background: #212121 url(../img/oc-portraits/bg/rich.jpg) no-repeat 50% 0;
+}
+
+.hero.robert > div {
+	background: #212121 url(../img/oc-portraits/bg/robert.jpg) no-repeat 50% 0;
+}
+
+.hero.ryang > div {
+	background: #212121 url(../img/oc-portraits/bg/ryang.jpg) no-repeat 50% 0;
+}
+
+.hero.ryano > div {
+	background: #212121 url(../img/oc-portraits/bg/ryano.jpg) no-repeat 50% 0;
+}
+
 .hero__back--static,
 .hero__front {
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;

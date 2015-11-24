@@ -35,6 +35,8 @@
 		stacksWrapper = slider.querySelector('.stacks-wrapper'),
 		stacks = [].slice.call(stacksWrapper.children),
 		imghero = document.querySelector('.hero__back--mover'),
+		heroEl = document.querySelector('.hero'),
+		ocPeeps = ['ali', 'brian', 'drew', 'joe', 'kevin', 'rich', 'robert', 'ryang', 'ryano'],
 		flkty, canOpen = true, canMoveHeroImage = true,
 		isFirefox = typeof InstallTrigger !== 'undefined',
 		win = { width: window.innerWidth, height: window.innerHeight };
@@ -55,10 +57,16 @@
 	}
 
 	function init() {
+		var ocPeepIndex = Math.floor(Math.random() * (ocPeeps.length - 0 + 1)) + 0;
+		for(var i=0; i<ocPeeps.length; i++) {
+			classie.remove(heroEl, ocPeeps[i]);
+		}
+		classie.add(heroEl, ocPeeps[ocPeepIndex]);
+		
 		flkty = new Flickity(stacksWrapper, {
 			wrapAround: true,
 			imagesLoaded: true,
-			initialIndex: 0,
+			initialIndex: ocPeepIndex,
 			setGallerySize: false,
 			pageDots: false,
 			prevNextButtons: false
@@ -115,19 +123,31 @@
 				}
 				else if( classie.has(stack, 'stack-prev') ) {
 					flkty.previous(true);
+					switchBgFn(this);
 				}
 				else if( classie.has(stack, 'stack-next') ) {
 					flkty.next(true);
+					switchBgFn(this);
 				}
 			});
+			
+			var switchBgFn = function(el) {
+				for(var i=0; i<ocPeeps.length; i++) {
+					if(classie.has(el, ocPeeps[i])) {
+						classie.add(heroEl, ocPeeps[i]);
+					} else {
+						classie.remove(heroEl, ocPeeps[i]);
+					}
+				}
+			};
 
-			titleEl.addEventListener('mouseenter', function(ev) {
-				if( classie.has(stack, 'is-selected') ) {
-					canMoveHeroImage = false;
-					imghero.style.WebkitTransform = 'perspective(1000px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
-					imghero.style.transform = 'perspective(1000px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
-				}
-			});
+			// titleEl.addEventListener('mouseenter', function(ev) {
+			// 	if( classie.has(stack, 'is-selected') ) {
+			// 		canMoveHeroImage = false;
+			// 		imghero.style.WebkitTransform = 'perspective(1000px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
+			// 		imghero.style.transform = 'perspective(1000px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
+			// 	}
+			// });
 
 			titleEl.addEventListener('mouseleave', function(ev) {
 				// if current stack and it's not opened..
@@ -137,17 +157,17 @@
 			});
 		});
 
-		window.addEventListener('mousemove', throttle(function(ev) {
-			if( !canMoveHeroImage ) return false;
-			var xVal = -1/(win.height/2)*ev.clientY + 1,
-				yVal = 1/(win.width/2)*ev.clientX - 1,
-				transX = 20/(win.width)*ev.clientX - 10,
-				transY = 20/(win.height)*ev.clientY - 10,
-				transZ = 100/(win.height)*ev.clientY - 50;
+		// window.addEventListener('mousemove', throttle(function(ev) {
+		// 	if( !canMoveHeroImage ) return false;
+		// 	var xVal = -1/(win.height/2)*ev.clientY + 1,
+		// 		yVal = 1/(win.width/2)*ev.clientX - 1,
+		// 		transX = 20/(win.width)*ev.clientX - 10,
+		// 		transY = 20/(win.height)*ev.clientY - 10,
+		// 		transZ = 100/(win.height)*ev.clientY - 50;
 
-			imghero.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
-			imghero.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
-		}, 100));
+		// 	imghero.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+		// 	imghero.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+		// }, 100));
 
 		// window resize
 		window.addEventListener( 'resize', throttle(function(ev) {
