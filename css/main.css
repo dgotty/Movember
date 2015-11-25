@@ -848,6 +848,14 @@ h1.site-header.hide {
         overflow-y: scroll;
 }
 	}
+
+.donation-link {
+    color: #ef5350;
+}
+
+.donation-link:hover {
+    text-decoration: underline;
+}
 <!-- webfont -->
 
 @font-face {
