@@ -37,6 +37,7 @@
 		imghero = document.querySelector('.hero__back--mover'),
 		heroEl = document.querySelector('.hero'),
 		ocPeeps = ['ali', 'brian', 'drew', 'joe', 'kevin', 'rich', 'robert', 'ryang', 'ryano'],
+		siteHeader = document.querySelector('.site-header'),
 		flkty, canOpen = true, canMoveHeroImage = true,
 		isFirefox = typeof InstallTrigger !== 'undefined',
 		win = { width: window.innerWidth, height: window.innerHeight };
@@ -89,6 +90,7 @@
 				ev.preventDefault();
 				if( classie.has(stack, 'is-selected') ) { // current stack
 					if( classie.has(bodyEl, 'view-full') ) { // stack is opened
+						classie.remove(siteHeader, 'hide');
 						var closeStack = function() {
 							classie.remove(bodyEl, 'move-items');
 
@@ -113,6 +115,7 @@
 						}
 					}
 					else if( canOpen ) { // stack is closed
+						classie.add(siteHeader, 'hide');
 						canMoveHeroImage = false;
 						classie.add(bodyEl, 'view-full');
 						setTimeout(function() { classie.add(bodyEl, 'move-items'); }, 25);

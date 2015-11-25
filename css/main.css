@@ -178,6 +178,21 @@ button:focus {
 	color: #ef5350;
 }
 
+/* Site Header */
+h1.site-header {
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #333;
+	font-size: 4em;
+	margin: 0.67em;
+	position: absolute;
+	width: 900px;
+	z-index: 99999;
+}
+
+h1.site-header.hide {
+	display: none;
+}
+
 /* Hero image */
 .hero {
 	position: absolute;
