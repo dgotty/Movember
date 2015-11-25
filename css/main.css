@@ -797,15 +797,12 @@ h1.site-header.hide {
 	}
 	.menu__item {
 		display: block;
-		background: #4F4E4E;
-		overflow: hidden;
-		height: 4px;
+        font-size: .8em;
+        line-height: 2;
 		width: 30px;
 		margin: 3px 10px 0 0;
 	}
-	.menu__item span {
-		display: none;
-	}
+	
 	.codrops-header {
 		padding: 0.5em 0;
 	}
