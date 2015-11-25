@@ -57,7 +57,7 @@
 	}
 
 	function init() {
-		var ocPeepIndex = Math.floor(Math.random() * (ocPeeps.length - 0 + 1)) + 0;
+		var ocPeepIndex = Math.floor(Math.random() * ((ocPeeps.length-1) - 0 + 1)) + 0;
 		for(var i=0; i<ocPeeps.length; i++) {
 			classie.remove(heroEl, ocPeeps[i]);
 		}
