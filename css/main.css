@@ -205,7 +205,7 @@ h1.site-header.hide {
 }
 
 .hero > div {
-	background: #212121 url(../img/bg.jpg) no-repeat 50% 0;
+	background: #212121;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -825,7 +825,27 @@ h1.site-header.hide {
 	}
 }
 
+.about-us {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    color: #000;
+    left: 50%;
+    line-height: 2;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    z-index: 1;
+}
 
+@media screen and (max-width: 65em) {
+	.about-us {
+   max-height: 80vh;
+        width: 80%;
+        overflow-y: scroll;
+}
+	}
 <!-- webfont -->
 
 @font-face {
@@ -833,6 +853,7 @@ h1.site-header.hide {
 	src: url('../font/movember.eot');
     src:url('../font/movember.eot#iefix') format('embedded-opentype'); /* IE6-IE8 */
 }
+
 
 @font-face {
 	font-family: 'movember';
