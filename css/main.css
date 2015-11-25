@@ -446,6 +446,7 @@ h1.site-header.hide {
 	margin: 80px 0 30px;
 	padding: 50px 40px 15px;
 	text-align: center;
+    text-shadow: 0 0 8px #fff;
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
@@ -486,6 +487,7 @@ h1.site-header.hide {
 
 .is-selected .stack-title a span {
 	color: #ef5350;
+    text-shadow: none;
 }
 
 .stack-title a::after,
